@@ -1,0 +1,15 @@
+[Unit]
+Description=A simple python webscraper
+After=network.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/home/youruser/Indexer
+ExecStart=/usr/bin/python3 /home/youruser/Indexer/main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
